@@ -1,30 +1,164 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Videos App
-    </ion-title>
+  <ion-toolbar color="dark">
+    <ion-title> Videos App </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="light">
   <ion-searchbar placeholder="Buscar"></ion-searchbar>
 
   <ion-list>
-    <ion-item lines="full"> <!-- linha vai de um canto ao outro -->
-      <ion-thumbnail slot="start">
-        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg">
-      </ion-thumbnail>
-      <ion-label class="ion-text-wrap"> <!-- quebra a linha quando o texto chega ao limite de espaço -->
-        <div>
-          <h1>Doutor Estranho no Multiverso da Loucura (2022)</h1>
-          <p>05/05/2022 (BR) - 2h 6m</p>
-          <p>Fantasia, Ação, Aventura</p>
-        </div>
-      </ion-label>
+    <!-- Doutor Estranho -->
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <!-- linha vai de um canto ao outro -->
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <!-- quebra a linha quando o texto chega ao limite de espaço -->
+          <div>
+            <h1>Doutor Estranho no Multiverso da Loucura (2022)</h1>
+            <p>05/05/2022 (BR) - 2h 6m</p>
+            <p>Fantasia, Ação, Aventura</p>
+          </div>
+        </ion-label>
 
-      <ion-chip color="success" outline>
-        <ion-label>76%</ion-label>
-      </ion-chip>
-    </ion-item>
+        <ion-chip color="success" outline>
+          <ion-label>76%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+    <!-- Animais Fantásticos -->
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <!-- linha vai de um canto ao outro -->
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gopGghuMtmdMviBcl9G0JfVB2RZ.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <!-- quebra a linha quando o texto chega ao limite de espaço -->
+          <div>
+            <h1>Animais Fantásticos: Os Segredos de Dumbledore (2022)</h1>
+            <p>14/04/2022 (BR) - 2h 22m</p>
+            <p>Fantasia, Ação, Aventura</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="warning" outline>
+          <ion-label>68%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+    <!-- Sonic o Filme -->
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <!-- linha vai de um canto ao outro -->
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/f4SvCKIUrC2cDR7Xo4k1kaGAqQ2.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <!-- quebra a linha quando o texto chega ao limite de espaço -->
+          <div>
+            <h1>Sonic 2: O Filme (2022)</h1>
+            <p>07/04/2022 (BR) - 2h 2m</p>
+            <p>Ação, Aventura, Família, Comédia, Ficção científica</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>76%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <!-- linha vai de um canto ao outro -->
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <!-- quebra a linha quando o texto chega ao limite de espaço -->
+          <div>
+            <h1>Doutor Estranho no Multiverso da Loucura (2022)</h1>
+            <p>05/05/2022 (BR) - 2h 6m</p>
+            <p>Fantasia, Ação, Aventura</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>76%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <!-- linha vai de um canto ao outro -->
+        <ion-thumbnail slot="start">
+          <img
+            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg"
+          />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <!-- quebra a linha quando o texto chega ao limite de espaço -->
+          <div>
+            <h1>Doutor Estranho no Multiverso da Loucura (2022)</h1>
+            <p>05/05/2022 (BR) - 2h 6m</p>
+            <p>Fantasia, Ação, Aventura</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>76%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
