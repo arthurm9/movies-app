@@ -1,0 +1,23 @@
+ion-item{ // scss permite alinhar elementos um dentro do outro
+  ion-item {
+    --padding-start: 10px;
+    --inner-padding-end: 10px;
+  }
+  ion-thumbnail {
+    height: 100%;
+    margin-inline-end: 10px;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 0.8rem; // medida relativa
+  }
+  p {
+    font-size: 0.6rem;
+  }
+  p + p { // 'p + p' pega o segundo elemento do tipo p
+    color: #8a8a8a;
+  }
+  ion-chip{
+    padding-inline: 3px;
+  }
+}
