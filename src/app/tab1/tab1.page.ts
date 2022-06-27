@@ -1,3 +1,4 @@
+import { IFilme } from '../models/IFilme.model'; // importa o model criado para a interface de filmes
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
@@ -8,6 +9,52 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+
+  titulo = 'Vídeos App';
+
+  // array dos filmes
+  listaVideos: IFilme[] = [
+    { // Doutor Estranho
+      nome: 'Doutor Estranho no Multiverso da Loucura (2022)',
+      dataLancamento: '05/05/2022',
+      duracao: '2h 6m',
+      classificacao: 76,
+      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg',
+      generos: ['Fantasia', 'Ação', 'Aventura']
+    },
+    { // Animais Fantásticos
+      nome: 'Animais Fantásticos: Os Segredos de Dumbledore (2022)',
+      dataLancamento: '14/04/2022',
+      duracao: '2h 22m',
+      classificacao: 68,
+      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gopGghuMtmdMviBcl9G0JfVB2RZ.jpg',
+      generos: ['Fantasia', 'Ação', 'Aventura']
+    },
+    { // Sonic
+      nome: 'Sonic 2: O Filme (2022)',
+      dataLancamento: '07/04/2022',
+      duracao: '2h 2m',
+      classificacao: 76,
+      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/f4SvCKIUrC2cDR7Xo4k1kaGAqQ2.jpg',
+      generos: ['Ação', 'Aventura', 'Família', 'Comédia', 'Ficção científica']
+    },
+    { // Assasino sem Rastro
+      nome: 'Assassino Sem Rastro (2022)',
+      dataLancamento: '09/06/2022',
+      duracao: '1h 54m',
+      classificacao: 73,
+      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/emj0dVlz5zSnvOfMZJA2zrWyW6Z.jpg',
+      generos: ['Ação', 'Thriller', 'Crime']
+    },
+    { // Homem-Aranha
+      nome: 'Homem-Aranha: Sem Volta Para Casa (2021)',
+      dataLancamento: '16/12/2021',
+      duracao: '2h 29m',
+      classificacao: 81,
+      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg',
+      generos: ['Ação', 'Aventura', 'Ficção científica']
+    },
+  ];
 
   constructor(public alertController: AlertController, public toastController: ToastController) {}
 
