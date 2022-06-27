@@ -2,6 +2,8 @@ import { IFilme } from '../models/IFilme.model'; // importa o model criado para 
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { DadosService } from '../services/dados.service';
 
 @Component({
   selector: 'app-tab1',
@@ -61,7 +63,17 @@ export class Tab1Page {
     },
   ];
 
-  constructor(public alertController: AlertController, public toastController: ToastController) {}
+  constructor(public alertController: AlertController,
+    public toastController: ToastController,
+    public dadosService: DadosService,
+    public route: Router) { }
+
+  exibirFilme(filme: IFilme){
+    // armazena o filme no serviço de dados
+    this.dadosService.setDados('filme', filme);
+    // chama a página com os dados do filme armazenado
+    this.route.navigateByUrl('/dados-filme');
+  }
 
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({

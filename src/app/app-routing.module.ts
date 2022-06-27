@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'homem-aranha',
     loadChildren: () => import('./filmes/homem-aranha/homem-aranha.module').then( m => m.HomemAranhaPageModule)
+  },
+  {
+    path: 'dados-filme',
+    loadChildren: () => import('./dados-filme/dados-filme.module').then( m => m.DadosFilmePageModule)
   }
 
 ];
