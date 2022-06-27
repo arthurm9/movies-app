@@ -20,7 +20,8 @@ export class Tab1Page {
       duracao: '2h 6m',
       classificacao: 76,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg',
-      generos: ['Fantasia', 'Ação', 'Aventura']
+      generos: ['Fantasia', 'Ação', 'Aventura'],
+      pagina: '/doutor-estranho'
     },
     { // Animais Fantásticos
       nome: 'Animais Fantásticos: Os Segredos de Dumbledore (2022)',
@@ -28,7 +29,8 @@ export class Tab1Page {
       duracao: '2h 22m',
       classificacao: 68,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gopGghuMtmdMviBcl9G0JfVB2RZ.jpg',
-      generos: ['Fantasia', 'Ação', 'Aventura']
+      generos: ['Fantasia', 'Ação', 'Aventura'],
+      pagina: '/animais-fantasticos'
     },
     { // Sonic
       nome: 'Sonic 2: O Filme (2022)',
@@ -36,7 +38,8 @@ export class Tab1Page {
       duracao: '2h 2m',
       classificacao: 76,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/f4SvCKIUrC2cDR7Xo4k1kaGAqQ2.jpg',
-      generos: ['Ação', 'Aventura', 'Família', 'Comédia', 'Ficção científica']
+      generos: ['Ação', 'Aventura', 'Família', 'Comédia', 'Ficção científica'],
+      pagina: '/sonic'
     },
     { // Assasino sem Rastro
       nome: 'Assassino Sem Rastro (2022)',
@@ -44,7 +47,8 @@ export class Tab1Page {
       duracao: '1h 54m',
       classificacao: 73,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/emj0dVlz5zSnvOfMZJA2zrWyW6Z.jpg',
-      generos: ['Ação', 'Thriller', 'Crime']
+      generos: ['Ação', 'Thriller', 'Crime'],
+      pagina: '/assasino-sem-rastro'
     },
     { // Homem-Aranha
       nome: 'Homem-Aranha: Sem Volta Para Casa (2021)',
@@ -52,7 +56,8 @@ export class Tab1Page {
       duracao: '2h 29m',
       classificacao: 81,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg',
-      generos: ['Ação', 'Aventura', 'Ficção científica']
+      generos: ['Ação', 'Aventura', 'Ficção científica'],
+      pagina: '/homem-aranha'
     },
   ];
 

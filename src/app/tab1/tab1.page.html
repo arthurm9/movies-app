@@ -11,7 +11,8 @@
   <ion-list>
     <!-- Doutor Estranho -->
     <ion-item-sliding *ngFor="let filme of listaVideos">
-      <ion-item lines="full">
+      <!-- router link é uma propriedade angular q permite estabelecer rotas entre páginas -->
+      <ion-item lines="full" [routerLink]=filme.pagina>
         <!-- linha vai de um canto ao outro -->
         <ion-thumbnail slot="start">
           <img
