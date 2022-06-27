@@ -10,25 +10,27 @@
 
   <ion-list>
     <!-- Doutor Estranho -->
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let filme of listaVideos">
       <ion-item lines="full">
         <!-- linha vai de um canto ao outro -->
         <ion-thumbnail slot="start">
           <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hq2igFqb31fDqGotz8ZuUfwKgn8.jpg"
-          />
+            [src]="filme.cartaz"
+          /> <!-- binding: property bind -->
         </ion-thumbnail>
         <ion-label class="ion-text-wrap">
           <!-- quebra a linha quando o texto chega ao limite de espaço -->
           <div>
-            <h1>Doutor Estranho no Multiverso da Loucura (2022)</h1>
-            <p>05/05/2022 (BR) - 2h 6m</p>
-            <p>Fantasia, Ação, Aventura</p>
+            <!-- dentro de tags sempre usar interpolação -->
+            <h1>{{filme.nome}}</h1>
+            <p>{{filme.dataLancamento}} - {{filme.duracao}}</p>
+            <!-- ngFor é uma propriedade ionic, pode ser usada em arrays -->
+            <ion-badge color="light" *ngFor="let genero of filme.generos">{{genero}}</ion-badge>
           </div>
         </ion-label>
 
         <ion-chip color="success" outline>
-          <ion-label>76%</ion-label>
+          <ion-label>{{filme.classificacao}}%</ion-label>
         </ion-chip>
       </ion-item>
 
@@ -40,128 +42,8 @@
 
     </ion-item-sliding>
 
-    <!-- Animais Fantásticos -->
-    <ion-item-sliding>
-      <ion-item lines="full">
-        <!-- linha vai de um canto ao outro -->
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gopGghuMtmdMviBcl9G0JfVB2RZ.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <!-- quebra a linha quando o texto chega ao limite de espaço -->
-          <div>
-            <h1>Animais Fantásticos: Os Segredos de Dumbledore (2022)</h1>
-            <p>14/04/2022 (BR) - 2h 22m</p>
-            <p>Fantasia, Ação, Aventura</p>
-          </div>
-        </ion-label>
 
-        <ion-chip color="warning" outline>
-          <ion-label>68%</ion-label>
-        </ion-chip>
-      </ion-item>
 
-      <ion-item-options side="end">
-        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
 
-    </ion-item-sliding>
-
-    <!-- Sonic o Filme -->
-    <ion-item-sliding>
-      <ion-item lines="full">
-        <!-- linha vai de um canto ao outro -->
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/f4SvCKIUrC2cDR7Xo4k1kaGAqQ2.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <!-- quebra a linha quando o texto chega ao limite de espaço -->
-          <div>
-            <h1>Sonic 2: O Filme (2022)</h1>
-            <p>07/04/2022 (BR) - 2h 2m</p>
-            <p>Ação, Aventura, Família, Comédia, Ficção científica</p>
-          </div>
-        </ion-label>
-
-        <ion-chip color="success" outline>
-          <ion-label>76%</ion-label>
-        </ion-chip>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-
-    </ion-item-sliding>
-
-    <!-- Assasino sem Rastro -->
-    <ion-item-sliding>
-      <ion-item lines="full">
-        <!-- linha vai de um canto ao outro -->
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/emj0dVlz5zSnvOfMZJA2zrWyW6Z.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <!-- quebra a linha quando o texto chega ao limite de espaço -->
-          <div>
-            <h1>Assassino Sem Rastro (2022)</h1>
-            <p>09/06/2022 (BR) - 1h 54m</p>
-            <p>Ação, Thriller, Crime</p>
-          </div>
-        </ion-label>
-
-        <ion-chip color="success" outline>
-          <ion-label>73%</ion-label>
-        </ion-chip>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-
-    </ion-item-sliding>
-
-    <!-- Homem-Aranha: Sem volta pra casa -->
-    <ion-item-sliding>
-      <ion-item lines="full">
-        <!-- linha vai de um canto ao outro -->
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <!-- quebra a linha quando o texto chega ao limite de espaço -->
-          <div>
-            <h1>Homem-Aranha: Sem Volta Para Casa (2021)</h1>
-            <p>16/12/2021 (BR) - 2h 29m</p>
-            <p>Ação, Aventura, Ficção científica</p>
-          </div>
-        </ion-label>
-
-        <ion-chip color="success" outline>
-          <ion-label>81%</ion-label>
-        </ion-chip>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-
-    </ion-item-sliding>
   </ion-list>
 </ion-content>

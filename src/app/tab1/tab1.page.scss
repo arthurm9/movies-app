@@ -20,4 +20,9 @@ ion-item{ // scss permite alinhar elementos um dentro do outro
   ion-chip{
     padding-inline: 3px;
   }
+  ion-badge {
+    font-weight: 300;
+    font-size: 0.6rem;
+    margin-right: 2px;
+  }
 }
