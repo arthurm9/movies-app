@@ -6,26 +6,32 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="light">
-  <ion-searchbar placeholder="Buscar"></ion-searchbar>
+  <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Buscar"></ion-searchbar>
 
   <ion-list>
     <!-- Doutor Estranho -->
     <ion-item-sliding *ngFor="let filme of listaVideos">
+
       <!-- router link é uma propriedade angular q permite estabelecer rotas entre páginas -->
       <ion-item lines="full" (click)="exibirFilme(filme)">
+
         <!-- linha vai de um canto ao outro -->
         <ion-thumbnail slot="start">
           <img [src]="filme.cartaz" />
           <!-- binding: property bind -->
         </ion-thumbnail>
+
         <ion-label class="ion-text-wrap">
           <!-- quebra a linha quando o texto chega ao limite de espaço -->
           <div>
+
             <!-- dentro de tags sempre usar interpolação -->
             <h1>{{filme.nome}}</h1>
             <p>{{filme.dataLancamento}} - {{filme.duracao}}</p>
+
             <!-- ngFor é uma propriedade ionic, pode ser usada em arrays -->
             <ion-badge color="light" *ngFor="let genero of filme.generos">{{genero}}</ion-badge>
+
           </div>
         </ion-label>
 
