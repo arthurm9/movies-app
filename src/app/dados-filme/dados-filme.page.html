@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color=dark>
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,11 +11,14 @@
   <!-- caso não tenha dados sobre o filme, o card não aparece por conta do If -->
   <ion-card *ngIf="filme">
     <ion-card-header>
-      <img [src]="filme.cartaz">
+      <img [src]="filme.cartaz" />
     </ion-card-header>
 
     <ion-card-content>
-      <h1>{{filme.nome}} - <ion-chip color="success">{{filme.classificacao}}%</ion-chip></h1>
+      <h1>
+        {{filme.nome}} -
+        <ion-chip color="success">{{filme.classificacao}}%</ion-chip>
+      </h1>
       <p>{{filme.dataLancamento}} - {{filme.duracao}}</p>
     </ion-card-content>
     <ion-item>

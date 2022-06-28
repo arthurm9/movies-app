@@ -78,7 +78,7 @@ export class Tab1Page {
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({
       header: 'Alerta',
-      message: 'Deseja Favoritar este filme?',
+      message: 'Deseja Favoritar?',
       buttons: [
         {
           text: 'Cancelar',
