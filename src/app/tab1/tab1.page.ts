@@ -5,7 +5,7 @@ import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { DadosService } from '../services/dados.service';
 import { FilmeService } from '../services/filme.service';
-import { IListaFilmes } from '../models/IFilmeAPI.model';
+import { IFilmeAPI, IListaFilmes } from '../models/IFilmeAPI.model';
 
 @Component({
   selector: 'app-tab1',
@@ -85,7 +85,7 @@ export class Tab1Page {
     }
   }
 
-  exibirFilme(filme: IFilme){
+  exibirFilme(filme: IFilmeAPI){
     // armazena o filme no serviço de dados
     this.dadosService.setDados('filme', filme);
     // chama a página com os dados do filme armazenado

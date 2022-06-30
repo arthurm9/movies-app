@@ -8,16 +8,26 @@
 <ion-content [fullscreen]="true" color="light">
   <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Buscar"></ion-searchbar>
 
-  <ion-list>
+  <ion-list *ngIf="listaFilmes"> <!-- se a lista de filmes for nula, não exibe, se não, exibe os filmes -->
     <!-- Doutor Estranho -->
-    <ion-item-sliding *ngFor="let filme of listaVideos">
+
+    <!-- mensagem caso não haja filmes -->
+    <ion-item lines="none" *ngIf="listaFilmes.results.length === 0">
+      <ion-label class="ion-text-center">
+        Não há filmes para exibir...
+      </ion-label>
+    </ion-item>
+
+    <ion-item-sliding *ngFor="let filme of listaFilmes.results">
 
       <!-- router link é uma propriedade angular q permite estabelecer rotas entre páginas -->
       <ion-item lines="full" (click)="exibirFilme(filme)">
 
         <!-- linha vai de um canto ao outro -->
         <ion-thumbnail slot="start">
-          <img [src]="filme.cartaz" />
+          <img *ngIf="filme.poster_path" src="https://www.themoviedb.org/t/p/w500/{{filme.poster_path}}" />
+
+          <ion-icon *ngIf = "!filme.poster_path" name="videocam-off"></ion-icon>
           <!-- binding: property bind -->
         </ion-thumbnail>
 
@@ -26,17 +36,18 @@
           <div>
 
             <!-- dentro de tags sempre usar interpolação -->
-            <h1>{{filme.nome}}</h1>
-            <p>{{filme.dataLancamento}} - {{filme.duracao}}</p>
+            <h1>{{filme.title}}</h1>
+            <p>{{filme.release_date}}</p>
 
             <!-- ngFor é uma propriedade ionic, pode ser usada em arrays -->
-            <ion-badge color="light" *ngFor="let genero of filme.generos">{{genero}}</ion-badge>
+            <ion-badge color="light" *ngFor="let genero of filme.genre_ids">{{genero}}</ion-badge>
 
           </div>
         </ion-label>
 
-        <ion-chip color="success" outline>
-          <ion-label>{{filme.classificacao}}%</ion-label>
+        <!-- condição ternária para alterar a cor das notas dos filmes -->
+        <ion-chip [color]="filme.vote_average < 5 ? 'danger' : ((filme.vote_average < 7) ? 'warning' : 'success')" outline>
+          <ion-label>{{filme.vote_average}}</ion-label>
         </ion-chip>
       </ion-item>
 
