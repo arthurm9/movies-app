@@ -37,7 +37,7 @@
 
             <!-- dentro de tags sempre usar interpolação -->
             <h1>{{filme.title}}</h1>
-            <p>{{filme.release_date}}</p>
+            <p>{{filme.release_date | date: 'shortDate'}}</p> <!-- formatação de data com pipe '|' -->
 
             <!-- ngFor é uma propriedade ionic, pode ser usada em arrays -->
             <ion-badge color="light" *ngFor="let genero of filme.genre_ids">{{genero}}</ion-badge>
