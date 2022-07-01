@@ -136,6 +136,7 @@ export class Tab1Page implements OnInit {
       dados.genres.forEach(genero => {
         this.generos[genero.id] = genero.name
       })
+      this.dadosService.setDados('generos', this.generos);
     })
   }
 }
