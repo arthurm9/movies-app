@@ -1,47 +1,47 @@
-<ion-header [translucent]="true">
+<!-- start header -->
+<ion-header>
   <ion-toolbar color="dark">
-    <ion-title> {{titulo}} </ion-title>
-    <!-- interpolação -->
+    <ion-title>
+      {{titulo}}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
+<!-- end header-->
 
+<!-- start content -->
 <ion-content [fullscreen]="true" color="light">
-  <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Buscar"></ion-searchbar>
+  <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Pesquisar"></ion-searchbar>
+  <!-- verifica se a lista contém dados, e exibe -->
+  <ion-list *ngIf="listaFilmes">
 
-  <ion-list *ngIf="listaFilmes"> <!-- se a lista de filmes for nula, não exibe, se não, exibe os filmes -->
-    <!-- Doutor Estranho -->
-
-    <!-- mensagem caso não haja filmes -->
+    <!-- mensagem caso não haja dados -->
     <ion-item lines="none" *ngIf="listaFilmes.results.length === 0">
       <ion-label class="ion-text-center">
         Não há filmes para exibir...
       </ion-label>
     </ion-item>
 
+    <!-- o sliding só funciona se houver resultados -->
     <ion-item-sliding *ngFor="let filme of listaFilmes.results">
 
-      <!-- router link é uma propriedade angular q permite estabelecer rotas entre páginas -->
+      <!-- start item -->
       <ion-item lines="full" (click)="exibirFilme(filme)">
-
-        <!-- linha vai de um canto ao outro -->
         <ion-thumbnail slot="start">
-          <img *ngIf="filme.poster_path" src="https://www.themoviedb.org/t/p/w500/{{filme.poster_path}}" />
-
+          <img *ngIf="filme.poster_path" src="https://www.themoviedb.org/t/p/w500/{{filme.poster_path}}"/>
           <ion-icon *ngIf = "!filme.poster_path" name="videocam-off"></ion-icon>
-          <!-- binding: property bind -->
         </ion-thumbnail>
 
+        <!-- wrap quebra a linha -->
         <ion-label class="ion-text-wrap">
-          <!-- quebra a linha quando o texto chega ao limite de espaço -->
           <div>
-
             <!-- dentro de tags sempre usar interpolação -->
             <h1>{{filme.title}}</h1>
-            <p>{{filme.release_date | date: 'shortDate'}}</p> <!-- formatação de data com pipe '|' -->
+
+            <!-- formatação de data com pipe '|' -->
+            <p>{{filme.release_date | date: 'shortDate'}}</p>
 
             <!-- ngFor é uma propriedade ionic, pode ser usada em arrays -->
             <ion-badge color="light" *ngFor="let idGenero of filme.genre_ids">{{generos[idGenero]}}</ion-badge>
-
           </div>
         </ion-label>
 
@@ -50,12 +50,16 @@
           <ion-label>{{filme.vote_average}}</ion-label>
         </ion-chip>
       </ion-item>
+      <!-- end item -->
 
+      <!-- botão favorito -->
       <ion-item-options side="end">
         <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
+          <ion-icon slot="icon-only" name="star" color="light"></ion-icon>
         </ion-item-option>
       </ion-item-options>
+
     </ion-item-sliding>
   </ion-list>
 </ion-content>
+<!-- end content -->

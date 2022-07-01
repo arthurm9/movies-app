@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SonicPageRoutingModule } from './sonic-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { SonicPage } from './sonic.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SonicPageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [SonicPage]
+  declarations: [LoginPage]
 })
-export class SonicPageModule {}
+export class LoginPageModule {}
