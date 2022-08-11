@@ -28,7 +28,7 @@ export class GeneroService {
     );
   }
 
-  async exibirErro(erro) {
+  async exibirErro(erro: any) {
     const toast = await this.toastController.create({
       message: 'Erro ao consultar a API',
       duration: 2000,

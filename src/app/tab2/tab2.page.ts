@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  titulo = 'séries';
+
   constructor() {}
 
 }

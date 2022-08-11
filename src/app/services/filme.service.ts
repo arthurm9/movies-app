@@ -21,7 +21,7 @@ export class FilmeService {
 
   buscarFilmes(busca: string): Observable <IListaFilmes> {
     const url = `${this.apiURL}search/movie${this.key}&language=${this.lingua}&region=${this.regiao}&query=${busca}`;
-    
+
     // a função pipe concatena várias operações
     return this.http.get<IListaFilmes>(url).pipe(
       map(retorno => retorno),
@@ -29,7 +29,7 @@ export class FilmeService {
     );
   }
 
-  async exibirErro(erro) {
+  async exibirErro(erro: any) {
     const toast = await this.toastController.create({
       message: 'Erro ao consultar a API',
       duration: 2000,

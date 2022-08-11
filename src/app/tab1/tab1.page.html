@@ -1,65 +1,49 @@
-<!-- start header -->
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>
-      {{titulo}}
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+      <ion-title>{{titulo}}</ion-title>
+    </ion-toolbar>
 </ion-header>
-<!-- end header-->
 
-<!-- start content -->
 <ion-content [fullscreen]="true" color="light">
-  <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Pesquisar"></ion-searchbar>
-  <!-- verifica se a lista contém dados, e exibe -->
-  <ion-list *ngIf="listaFilmes">
+    <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Pesquisar"></ion-searchbar>
 
-    <!-- mensagem caso não haja dados -->
-    <ion-item lines="none" *ngIf="listaFilmes.results.length === 0">
-      <ion-label class="ion-text-center">
-        Não há filmes para exibir...
-      </ion-label>
-    </ion-item>
+    <ion-list *ngIf="listaFilmes">
 
-    <!-- o sliding só funciona se houver resultados -->
-    <ion-item-sliding *ngFor="let filme of listaFilmes.results">
-
-      <!-- start item -->
-      <ion-item lines="full" (click)="exibirFilme(filme)">
-        <ion-thumbnail slot="start">
-          <img *ngIf="filme.poster_path" src="https://www.themoviedb.org/t/p/w500/{{filme.poster_path}}"/>
-          <ion-icon *ngIf = "!filme.poster_path" name="videocam-off"></ion-icon>
-        </ion-thumbnail>
-
-        <!-- wrap quebra a linha -->
-        <ion-label class="ion-text-wrap">
-          <div>
-            <!-- dentro de tags sempre usar interpolação -->
-            <h1>{{filme.title}}</h1>
-
-            <!-- formatação de data com pipe '|' -->
-            <p>{{filme.release_date | date: 'shortDate'}}</p>
-
-            <!-- ngFor é uma propriedade ionic, pode ser usada em arrays -->
-            <ion-badge color="light" *ngFor="let idGenero of filme.genre_ids">{{generos[idGenero]}}</ion-badge>
-          </div>
-        </ion-label>
-
-        <!-- condição ternária para alterar a cor das notas dos filmes -->
-        <ion-chip [color]="filme.vote_average < 5 ? 'danger' : ((filme.vote_average < 7) ? 'warning' : 'success')" outline>
-          <ion-label>{{filme.vote_average}}</ion-label>
-        </ion-chip>
+      <ion-item lines="none" *ngIf="listaFilmes.results.length === 0">
+        <ion-label class="ion-text-center">Não há filmes para exibir...</ion-label>
       </ion-item>
-      <!-- end item -->
 
-      <!-- botão favorito -->
-      <ion-item-options side="end">
-        <ion-item-option color="laranja" (click)="exibirAlertaFavorito()">
-          <ion-icon slot="icon-only" name="star" color="light"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
+      <ion-item-sliding *ngFor="let filme of listaFilmes.results">
 
-    </ion-item-sliding>
-  </ion-list>
+        <ion-item lines="full" (click)="exibirFilme(filme)">
+          <ion-thumbnail slot="start">
+            <img *ngIf="filme.poster_path" src="https://www.themoviedb.org/t/p/w500/{{filme.poster_path}}"/>
+            <ion-icon *ngIf = "!filme.poster_path" name="videocam-off"></ion-icon>
+          </ion-thumbnail>
+
+          <ion-label class="ion-text-wrap">
+            <div>
+              <h1>{{filme.title}}</h1>
+
+              <p>{{filme.release_date | date: 'shortDate'}}</p>
+
+              <ion-badge color="light" *ngFor="let idGenero of filme.genre_ids">{{generos[idGenero]}}</ion-badge>
+            </div>
+          </ion-label>
+
+          <ion-chip [color]="filme.vote_average < 5 ? 'danger' : ((filme.vote_average < 7) ? 'warning' : 'success')" outline>
+            <ion-label>{{filme.vote_average}}</ion-label>
+          </ion-chip>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option color="cinza" (click)="exibirAlertaFavorito()">
+            <ion-icon slot="icon-only" name="star" color="dark"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+
+    </ion-list>
+
 </ion-content>
-<!-- end content -->

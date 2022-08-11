@@ -1,7 +1,3 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-/** Ionic CSS Variables **/
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -82,6 +78,30 @@
 	--ion-color-laranja-contrast-rgb: 0,0,0;
 	--ion-color-laranja-shade: #e09900;
 	--ion-color-laranja-tint: #ffb61a;
+
+  /** amarelo **/
+  --ion-color-amarelo: #f9df39;
+	--ion-color-amarelo-rgb: 249,223,57;
+	--ion-color-amarelo-contrast: #000000;
+	--ion-color-amarelo-contrast-rgb: 0,0,0;
+	--ion-color-amarelo-shade: #dbc432;
+	--ion-color-amarelo-tint: #fae24d;
+
+  /** cinza **/
+  --ion-color-cinza: #e0e0e0;
+	--ion-color-cinza-rgb: 224,224,224;
+	--ion-color-cinza-contrast: #000000;
+	--ion-color-cinza-contrast-rgb: 0,0,0;
+	--ion-color-cinza-shade: #cfcdcd;
+	--ion-color-cinza-tint: #e3e3e3;
+
+  /** azul **/
+  --ion-color-azul: #5c98ff;
+	--ion-color-azul-rgb: 92,152,255;
+	--ion-color-azul-contrast: #000000;
+	--ion-color-azul-contrast-rgb: 0,0,0;
+	--ion-color-azul-shade: #5186e0;
+	--ion-color-azul-tint: #6ca2ff;
 }
 
 .ion-color-laranja {
@@ -91,4 +111,31 @@
 	--ion-color-contrast-rgb: var(--ion-color-laranja-contrast-rgb);
 	--ion-color-shade: var(--ion-color-laranja-shade);
 	--ion-color-tint: var(--ion-color-laranja-tint);
+}
+
+.ion-color-amarelo {
+	--ion-color-base: var(--ion-color-amarelo);
+	--ion-color-base-rgb: var(--ion-color-amarelo-rgb);
+	--ion-color-contrast: var(--ion-color-amarelo-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-amarelo-contrast-rgb);
+	--ion-color-shade: var(--ion-color-amarelo-shade);
+	--ion-color-tint: var(--ion-color-amarelo-tint);
+}
+
+.ion-color-cinza {
+	--ion-color-base: var(--ion-color-cinza);
+	--ion-color-base-rgb: var(--ion-color-cinza-rgb);
+	--ion-color-contrast: var(--ion-color-cinza-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-cinza-contrast-rgb);
+	--ion-color-shade: var(--ion-color-cinza-shade);
+	--ion-color-tint: var(--ion-color-cinza-tint);
+}
+
+.ion-color-azul {
+	--ion-color-base: var(--ion-color-azul);
+	--ion-color-base-rgb: var(--ion-color-azul-rgb);
+	--ion-color-contrast: var(--ion-color-azul-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-azul-contrast-rgb);
+	--ion-color-shade: var(--ion-color-azul-shade);
+	--ion-color-tint: var(--ion-color-azul-tint);
 }

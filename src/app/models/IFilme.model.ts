@@ -5,6 +5,5 @@ export interface IFilme {
   classificacao: number;
   cartaz: string;
   generos: string[];
-  // o '?' faz com que o campo não precise ser preenchido
-  pagina?: string;
+  pagina?: string;  // "?" = campo não precisa ser preenchido
 }

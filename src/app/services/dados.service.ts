@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class DadosService {
 
-  /* Serviço para armazenar dados de forma temporária (enquanto o programa estiver rodando) */
-
-  // os dados serão armazenados num array
   private dados: any = [];
 
   constructor() { }
@@ -16,7 +13,6 @@ export class DadosService {
   // 'any' diz que pode ser armazenado qualquer tipo de dado
   setDados(index: string, dados: any): boolean{
     if(index){
-      // armazena os dados no array
       this.dados[index] = dados;
       return true;
     } else {
@@ -36,3 +32,4 @@ export class DadosService {
     return delete this.dados[index];
   }
 }
+

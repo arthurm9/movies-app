@@ -1,4 +1,8 @@
-ion-item{ // scss permite alinhar elementos um dentro do outro
+* {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ion-item{
   ion-item {
     --padding-start: 10px;
     --inner-padding-end: 10px;
@@ -16,14 +20,14 @@ ion-item{ // scss permite alinhar elementos um dentro do outro
 
   h1 {
     font-weight: bold;
-    font-size: 0.8rem; // medida relativa
+    font-size: 0.8rem;
   }
 
   p {
     font-size: 0.6rem;
   }
 
-  p + p { // 'p + p' pega o segundo elemento do tipo p
+  p + p {
     color: #8a8a8a;
   }
 
@@ -41,4 +45,10 @@ ion-item{ // scss permite alinhar elementos um dentro do outro
     font-size: 0.6rem;
     margin-right: 2px;
   }
+}
+
+ion-title {
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
