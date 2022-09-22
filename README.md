@@ -1,2 +1,2 @@
-# videosApp
-Aplicação em Ionic
+# Movies APP using Ionic Framework
+------
